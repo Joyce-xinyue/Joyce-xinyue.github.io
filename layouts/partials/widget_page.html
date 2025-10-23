@@ -1,0 +1,85 @@
+<div class="page-home">
+{{/* 头部图片 */}}
+{{$top_image := "images/design/top-image.png"}}
+{{- if .Params.top_image -}}
+    {{- $top_image =  .Params.top_image -}}
+{{- end -}}
+<section class="hero"  style="background-image: url({{ $top_image | relURL}});">
+  <div class="hero-content">
+    <h1>{{ .Params.hero_title | markdownify }}</h1>
+    <p>{{ .Params.hero_desc | markdownify }}</p>
+    <a href="#plays" class="btn">Explore Our Plays</a>
+  </div>
+</section>
+
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ .Params.subtitle1 | markdownify }}</h2>
+      <p>{{ .Params.subtitle1_desc | markdownify }}</p>
+    </div>
+    <div class="content-blocks">
+
+      <div class="content-block">
+          {{ .Params.introduction | markdownify  | emojify }}
+      </div>
+      <div class="content-block">
+          {{ .Params.explore | markdownify  | emojify }}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+    {{- $items_type := "plays" -}}
+    {{- $items_count := .Params.show_plays | default 65535 -}}
+
+
+    {{/* Query */}}
+    {{- $query := where site.RegularPages "Type" $items_type -}}
+
+    {{- $count := len $query -}}
+
+    {{/* Sort */}}
+    {{/* $sort_by := "weight" */}}
+    {{ $query = sort $query ".Params.weight" "asc" }}
+
+    {{/* Limit */}}
+    {{ $query = first $items_count $query }}
+
+  <section id="plays" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Plays</h2>
+        <p>Discover our past and upcoming productions</p>
+      </div>
+      <div class="plays-grid">
+
+
+        {{ range  $index, $item := $query }}
+
+         {{- $image := ($item.Resources.ByType "image").GetMatch "*featured*" -}}
+        <div class="play-card">
+          <div class="play-img"
+               style="background-image: url('{{$image.RelPermalink}}');">
+          </div>
+          <div class="play-content">
+            <h3>{{$item.Title | markdownify  | emojify}}</h3>
+            <p>{{$item.Params.summary | markdownify  | emojify}}</p>
+            <a href="{{$item.RelPermalink}}" class="btn">Learn More</a>
+          </div>
+        </div>
+          {{ end }}
+
+
+      </div>
+    </div>
+  </section>
+
+
+</div>
