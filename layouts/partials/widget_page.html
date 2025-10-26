@@ -1,3 +1,4 @@
+
 <div class="page-home">
 {{/* 头部图片 */}}
 {{$top_image := "images/design/top-image.png"}}
@@ -9,6 +10,74 @@
     <h1>{{ .Params.hero_title | markdownify }}</h1>
     <p>{{ .Params.hero_desc | markdownify }}</p>
     <a href="#plays" class="btn">Explore Our Plays</a>
+  </div>
+</section>
+
+
+<section   class="section" style="background-color: #ffffff;">
+  <div class="container">
+    <div class="row  ">
+
+      <div class="profile-image col-12 col-md-4" style="">
+        <div id="profile">
+
+
+
+          <img src="{{ "images/avatar.jpg" | relURL }}" class=" avatar avatar-square " />
+
+
+          <div class="portrait-title">
+
+            <h2>
+              {{- .Title -}}
+            </h2>
+
+            {{ with .Params.role }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
+
+            {{ range .Params.organizations }}
+            <h3>
+              {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
+              <span>{{ .name }}</span>
+              {{ if .url }}</a>{{ end }}
+            </h3>
+            {{ end }}
+          </div>
+
+          <ul class="network-icon" aria-hidden="true">
+            {{ range .Params.social }}
+            {{ $pack := or .icon_pack "fas" }}
+            {{ $pack_prefix := $pack }}
+            {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+            {{ $pack_prefix = "fa" }}
+            {{ end }}
+            {{ $link := .link }}
+            {{ $scheme := (urls.Parse $link).Scheme }}
+            {{ $target := "" }}
+            {{ if not $scheme }}
+            {{ $link = .link | relLangURL }}
+            {{ else if in (slice "http" "https") $scheme }}
+            {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+            <li>
+              <a href="{{ $link | safeURL }}"
+                 title="{{.title}}"
+                 {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
+                <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+
+        </div>
+      </div>
+      <div class="profile-text col-12 col-md-8">
+        <div class="profile-about-text">About</div>
+        <div class="article-style" style="text-align: justify;">
+          {{ .Content }}
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
