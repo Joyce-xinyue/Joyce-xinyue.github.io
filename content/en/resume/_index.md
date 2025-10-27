@@ -5,7 +5,7 @@ title:  Resume
  
 
 hero_title: Welcome to Our Drama Society 🎭
-hero_desc: Discover the world of theater, creativity, and performance. Join us in bringing stories to life on stage.
+hero_desc: Follow Joyce to see how she build the world of drama at NFLS BCA.
 top_image:  "images/design/top-image.png"
 
 

@@ -60,7 +60,6 @@ play_contents:
 
       - the Greatest Showman
       - Corpse Bride
-      - ... Up to you guys
 
 
 

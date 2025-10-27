@@ -26,7 +26,7 @@ props_content:
 
   
   - title: Props making
-    desc: little shop of horrors
+    desc: The Great Gatsby
     gallery_images:
       - path: "images/props/p3.1.jpg"
         name: ""
@@ -37,14 +37,10 @@ props_content:
 
 ---
 
--------
  
-**Making of Human-Sized Snap Flower Prop and Wooden Back Wall**
-
-
 **Concept and Rules I Decided**  
 
-Two hard rules: large enough for an adult inside and 90% recycled materials. I sketched the draft—fridge carton sideways, mouth opening, performer’s head as pistil—all later measures based on this.
+**Two hard rules:** large enough for an adult inside and 90% recycled materials. I sketched the draft—fridge carton sideways, mouth opening, performer’s head as pistil—all later measures based on this.
 
 
 **Material Hunt I Did the Legwork**  
@@ -74,10 +70,10 @@ From idea, material scouting, and sketches to testing, every key action was mine
 
 ---
 
-**Researching women’s fashion in the context of historical trends--From Victorian era to Jazz Age**
+<p class="props-red-text">Researching women’s fashion in the context of historical trends--From Victorian era to Jazz Age</p>
 
 
-**Tim Burton’s Corpse Bride uses Victorian-era fashion to show social status and personality.**
+<p class="props-red-text">Tim Burton’s Corpse Bride uses Victorian-era fashion to show social status and personality.</p>
 
 **Costumes in Corpse Bride: The Vitality of the Dead vs. The Stiffness of the Living**  
 
@@ -93,8 +89,9 @@ In Tim Burton’s Corpse Bride, costumes visually contrast the vitality of the d
 
 **Movement & Silhouette:** Flowing layers on Emily’s costume suggest openness and emotion, contrasting with Victoria’s structured skirts and tight bodice that symbolize societal control and internal restraint.
 
+----
 
-**Women’s Costumes in Little Women: Personality and Social Status in Civil War-Era America**  
+<p class="props-red-text">Women’s Costumes in Little Women: Personality and Social Status in Civil War-Era America</p>  
 
 In Little Women, clothing reflects both personality and social position within a middle-class family during the American Civil War.
 
